@@ -1,0 +1,95 @@
+plugins {
+        id 'java'
+        id 'org.springframework.boot' version '2.1.7.RELEASE'
+        id 'application'
+        id 'jacoco'
+        id 'checkstyle'
+        //id 'com.github.spotbugs' version '2.0.0'
+        id 'org.owasp.dependencycheck' version '5.0.0-M3.1'
+        id 'info.solidsoft.pitest' version '1.4.0'
+        id 'org.sonarqube' version '2.7.1'
+        id 'net.researchgate.release' version '2.8.1'
+        id "com.github.ManifestClasspath" version "0.1.0-RELEASE"
+
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group 'Sprint_'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+ext.lombokVersion = '1.18.6'
+ext.camundaVersion = '7.10.0'
+ext.camundaSpringBootStarterVersion = '3.2.1' // See https://docs.camunda.org/manual/latest/user-guide/spring-boot-integration/version-compatibility/
+ext.springFoxVersion = '2.9.2'
+
+application {
+mainClassName = 'com.uk.sprint.SprintAplication'
+}
+
+
+repositories {
+    mavenCentral()
+    maven {
+        credentials {
+            username 'maven-proxy'
+            password '.KD>7#N4u?b"G~@@'
+        }
+        url 'http://192.168.71.204:8081/repository/maven-hosted-snapshot'
+        content {
+            includeVersionByRegex '[com\\.bt\\.|uk\\.co\\.bt\\.]', '.*' , '.*-SNAPSHOT'
+        }
+    }
+    maven {
+        credentials {
+            username 'maven-proxy'
+            password '.KD>7#N4u?b"G~@@'
+        }
+        url 'http://192.168.71.204:8081/repository/maven-group'
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation "org.springframework.security:spring-security-config"
+    implementation "org.springframework.security:spring-security-web"
+    implementation "org.springframework.security:spring-security-ldap"
+    implementation "org.springframework.kafka:spring-kafka"
+    //camunda
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.1.RELEASE'
+
+
+    //database
+    implementation 'org.postgresql:postgresql:42.2.5'
+    //implementation 'org.flywaydb:flyway-core:5.2.4'
+    //springfox
+    implementation "io.springfox:springfox-swagger2:${springFoxVersion}"
+    implementation "io.springfox:springfox-swagger-ui:${springFoxVersion}"
+    //logging
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+    implementation 'org.slf4j:slf4j-api:1.7.26'
+    //utility
+    implementation 'commons-io:commons-io:2.6'
+    implementation 'com.google.guava:guava:23.0'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.9'
+    implementation 'org.apache.commons:commons-lang3:3.9'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.10.1'
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.10.1'
+    compile group: 'org.camunda.connect', name: 'camunda-connect-http-client', version: '1.0.1'
+
+    compile group: 'org.json', name: 'json', version: '20190722'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.10.1'
+
+    // test compilation dependencies
+    testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+    testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+    // test implementation dependencies
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testImplementation 'org.camunda.bpm.assert:camunda-bpm-assert:3.0.0'
+}
