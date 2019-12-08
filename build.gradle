@@ -4,6 +4,7 @@ plugins {
         id 'application'
         id 'jacoco'
         id 'checkstyle'
+        id 'distribution'
         //id 'com.github.spotbugs' version '2.0.0'
         id 'org.owasp.dependencycheck' version '5.0.0-M3.1'
         id 'info.solidsoft.pitest' version '1.4.0'
@@ -15,10 +16,15 @@ plugins {
 
 apply plugin: 'io.spring.dependency-management'
 
-group 'Sprint_'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = sourceCompatibility
+
+group = 'com.uk.sprint.Rest'
+
+bootJar { enabled = true }
+jar {enabled = true}
 
 ext.lombokVersion = '1.18.6'
 ext.camundaVersion = '7.10.0'
@@ -26,9 +32,13 @@ ext.camundaSpringBootStarterVersion = '3.2.1' // See https://docs.camunda.org/ma
 ext.springFoxVersion = '2.9.2'
 
 application {
-mainClassName = 'com.uk.sprint.SprintAplication'
+    mainClassName = 'com.uk.sprint.Rest.SprintAplication'
 }
 
+checkstyle {
+    configFile = file('checkstyle.xml')
+    ignoreFailures true
+}
 
 repositories {
     mavenCentral()
@@ -49,6 +59,13 @@ repositories {
         }
         url 'http://192.168.71.204:8081/repository/maven-group'
     }
+}
+
+task packageDistribution(type: Zip) {
+    archiveFileName = "sprint-0.1.zip"
+    destinationDirectory = file("$buildDir/dist")
+
+    from "$buildDir/toArchive"
 }
 
 dependencies {
