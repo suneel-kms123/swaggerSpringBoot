@@ -44,20 +44,20 @@ repositories {
     mavenCentral()
     maven {
         credentials {
-            username 'maven-proxy'
-            password '.KD>7#N4u?b"G~@@'
+            username ''
+            password ''
         }
-        url 'http://192.168.71.204:8081/repository/maven-hosted-snapshot'
+        url 'http://ipaddress:8081/repository/maven-hosted-snapshot'
         content {
             includeVersionByRegex '[com\\.bt\\.|uk\\.co\\.bt\\.]', '.*' , '.*-SNAPSHOT'
         }
     }
     maven {
         credentials {
-            username 'maven-proxy'
-            password '.KD>7#N4u?b"G~@@'
+            username ''
+            password ''
         }
-        url 'http://192.168.71.204:8081/repository/maven-group'
+        url 'http://ipaddress:8081/repository/maven-group'
     }
 }
 
