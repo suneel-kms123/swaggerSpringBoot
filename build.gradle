@@ -26,7 +26,7 @@ group = 'com.uk.sprint.Rest'
 bootJar { enabled = true }
 jar {enabled = true}
 
-ext.lombokVersion = '1.18.6'
+ext.lombokVersion = '1.18.10'
 ext.camundaVersion = '7.10.0'
 ext.camundaSpringBootStarterVersion = '3.2.1' // See https://docs.camunda.org/manual/latest/user-guide/spring-boot-integration/version-compatibility/
 ext.springFoxVersion = '2.9.2'
