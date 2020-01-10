@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.12">
+<file name="U:\uio\com.sprint\src\main\java\com\uk\sprint\Rest\ConnectionMock.java">
+<error line="1" column="9" severity="error" message="Package name &apos;com.uk.sprint.Rest&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+</file>
+<file name="U:\uio\com.sprint\src\main\java\com\uk\sprint\Rest\Impl\JavaStreamFilterImpl.java">
+<error line="1" column="9" severity="error" message="Package name &apos;com.uk.sprint.Rest.Impl&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="17" severity="error" message="&apos;block&apos; child has incorrect indentation level 11, expected level should be 12." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+</file>
+<file name="U:\uio\com.sprint\src\main\java\com\uk\sprint\Rest\SprintAplication.java">
+<error line="1" column="9" severity="error" message="Package name &apos;com.uk.sprint.Rest&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+</file>
+<file name="U:\uio\com.sprint\src\main\java\com\uk\sprint\Rest\model\ModelDataStream.java">
+<error line="1" column="9" severity="error" message="Package name &apos;com.uk.sprint.Rest.model&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="49" severity="error" message="&apos;if&apos; construct must use &apos;{}&apos;s." source="com.puppycrawl.tools.checkstyle.checks.blocks.NeedBracesCheck"/>
+<error line="50" severity="error" message="&apos;if&apos; construct must use &apos;{}&apos;s." source="com.puppycrawl.tools.checkstyle.checks.blocks.NeedBracesCheck"/>
+<error line="52" column="48" severity="error" message="&apos;&amp;&amp;&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+<error line="53" column="55" severity="error" message="&apos;&amp;&amp;&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+<error line="54" column="49" severity="error" message="&apos;&amp;&amp;&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+<error line="65" column="20" severity="error" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+<error line="66" column="40" severity="error" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+<error line="67" column="48" severity="error" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+<error line="68" column="42" severity="error" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+<error line="69" column="48" severity="error" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+</file>
+<file name="U:\uio\com.sprint\src\main\java\com\uk\sprint\Rest\model\schoolModel\Department.java">
+<error line="1" column="9" severity="error" message="Package name &apos;com.uk.sprint.Rest.model.schoolModel&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+</file>
+<file name="U:\uio\com.sprint\src\main\java\com\uk\sprint\Rest\model\schoolModel\Faculty.java">
+<error line="1" column="9" severity="error" message="Package name &apos;com.uk.sprint.Rest.model.schoolModel&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+</file>
+<file name="U:\uio\com.sprint\src\main\java\com\uk\sprint\Rest\model\schoolModel\School.java">
+<error line="1" column="9" severity="error" message="Package name &apos;com.uk.sprint.Rest.model.schoolModel&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+</file>
+<file name="U:\uio\com.sprint\src\main\java\com\uk\sprint\Rest\model\schoolModel\Staff.java">
+<error line="1" column="9" severity="error" message="Package name &apos;com.uk.sprint.Rest.model.schoolModel&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+</file>
+<file name="U:\uio\com.sprint\src\main\java\com\uk\sprint\Rest\model\schoolModel\Student.java">
+<error line="1" column="9" severity="error" message="Package name &apos;com.uk.sprint.Rest.model.schoolModel&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+</file>
+<file name="U:\uio\com.sprint\src\main\java\com\uk\sprint\Rest\swagger\SprintRestController.java">
+<error line="1" column="9" severity="error" message="Package name &apos;com.uk.sprint.Rest.swagger&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="12" severity="error" message="&apos;method def modifier&apos; has incorrect indentation level 8, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="24" severity="error" message="&apos;method def&apos; child has incorrect indentation level 12, expected level should be 8." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="25" severity="error" message="&apos;method def rcurly&apos; has incorrect indentation level 8, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+</file>
+<file name="U:\uio\com.sprint\src\main\java\com\uk\sprint\Rest\swagger\SwaggerConfig.java">
+<error line="1" column="9" severity="error" message="Package name &apos;com.uk.sprint.Rest.swagger&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="29" severity="error" message="Line is longer than 120 characters (found 388)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="37" severity="error" message="Line is longer than 120 characters (found 139)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="53" column="67" severity="error" message="&apos;.&apos; should be on a new line." source="SeparatorWrapDot"/>
+<error line="54" column="80" severity="error" message="&apos;.&apos; should be on a new line." source="SeparatorWrapDot"/>
+</file>
+<file name="U:\uio\com.sprint\src\main\java\com\uk\sprint\Rest\swagger\WebSecurityConfig.java">
+<error line="1" column="9" severity="error" message="Package name &apos;com.uk.sprint.Rest.swagger&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="12" severity="error" message="Line is longer than 120 characters (found 257)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+</checkstyle>

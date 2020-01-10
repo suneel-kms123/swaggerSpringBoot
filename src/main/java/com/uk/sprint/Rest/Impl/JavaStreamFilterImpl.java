@@ -7,6 +7,7 @@ import com.uk.sprint.Rest.model.schoolModel.Staff;
 import com.uk.sprint.Rest.model.schoolModel.Student;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class JavaStreamFilterImpl {
 

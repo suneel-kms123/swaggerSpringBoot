@@ -44,20 +44,20 @@ repositories {
     mavenCentral()
     maven {
         credentials {
-            username ''
-            password ''
+            username 'maven-proxy'
+            password '.KD>7#N4u?b"G~@@'
         }
-        url 'http://ipaddress:8081/repository/maven-hosted-snapshot'
+        url 'http://192.168.71.204:8081/repository/maven-hosted-snapshot'
         content {
             includeVersionByRegex '[com\\.bt\\.|uk\\.co\\.bt\\.]', '.*' , '.*-SNAPSHOT'
         }
     }
     maven {
         credentials {
-            username ''
-            password ''
+            username 'maven-proxy'
+            password '.KD>7#N4u?b"G~@@'
         }
-        url 'http://ipaddress:8081/repository/maven-group'
+        url 'http://192.168.71.204:8081/repository/maven-group'
     }
 }
 
@@ -103,8 +103,8 @@ dependencies {
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.10.1'
 
     // test compilation dependencies
-    testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
-    testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    compile "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 
     // test implementation dependencies
     testImplementation "org.springframework.boot:spring-boot-starter-test"
