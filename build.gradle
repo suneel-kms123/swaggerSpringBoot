@@ -27,8 +27,6 @@ bootJar { enabled = true }
 jar {enabled = true}
 
 ext.lombokVersion = '1.18.10'
-ext.camundaVersion = '7.10.0'
-ext.camundaSpringBootStarterVersion = '3.2.1' // See https://docs.camunda.org/manual/latest/user-guide/spring-boot-integration/version-compatibility/
 ext.springFoxVersion = '2.9.2'
 
 application {
@@ -41,24 +39,7 @@ checkstyle {
 }
 
 repositories {
-    mavenCentral()
-    maven {
-        credentials {
-            username mavenUser
-            password mavenPassword
-        }
-        url 'http://192.168.71.204:8081/repository/maven-hosted-snapshot'
-        content {
-            includeVersionByRegex '[com\\.bt\\.|uk\\.co\\.bt\\.]', '.*' , '.*-SNAPSHOT'
-        }
-    }
-    maven {
-        credentials {
-            username mavenUser
-            password mavenPassword
-        }
-        url 'http://192.168.71.204:8081/repository/maven-group'
-    }
+    mavenLocal()
 }
 
 task packageDistribution(type: Zip) {
@@ -74,15 +55,13 @@ dependencies {
     implementation "org.springframework.security:spring-security-web"
     implementation "org.springframework.security:spring-security-ldap"
     implementation "org.springframework.kafka:spring-kafka"
-    //camunda
+   
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.1.RELEASE'
 
 
-    //database
-    implementation 'org.postgresql:postgresql:42.2.5'
-    //implementation 'org.flywaydb:flyway-core:5.2.4'
+    //database - to add
     //springfox
     implementation "io.springfox:springfox-swagger2:${springFoxVersion}"
     implementation "io.springfox:springfox-swagger-ui:${springFoxVersion}"
@@ -108,7 +87,6 @@ dependencies {
 
     // test implementation dependencies
     testImplementation "org.springframework.boot:spring-boot-starter-test"
-    testImplementation 'org.camunda.bpm.assert:camunda-bpm-assert:3.0.0'
     testImplementation 'com.github.tomakehurst:wiremock-standalone:2.23.2'
     testImplementation 'com.github.tomakehurst:wiremock-jre8:2.23.2'
 }
