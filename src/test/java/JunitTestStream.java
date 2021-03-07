@@ -1,5 +1,5 @@
-import com.uk.sprint.Rest.Impl.JavaStreamFilterImpl;
-import com.uk.sprint.Rest.model.ModelDataStream;
+import com.uk.sprint.rest.impl.JavaStreamFilterImpl;
+import com.uk.sprint.rest.model.ModelDataStream;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -11,7 +11,6 @@ public class JunitTestStream {
 
     @Test
     public void testScenario(){
-        List<ModelDataStream> list = new ArrayList<ModelDataStream>();
         ModelDataStream modelDataStream = new ModelDataStream();
         modelDataStream.setCity("bengaluru");
         modelDataStream.setCountry("India");
@@ -23,6 +22,7 @@ public class JunitTestStream {
         modelDataStream1.setCountry("INDIA");
         modelDataStream1.setName("sairam");
         modelDataStream1.setSurname("guru");
+        List<ModelDataStream> list = new ArrayList<ModelDataStream>();
         list.add(modelDataStream);
         list.add(modelDataStream1);
         javaStreamFilter.getFilterStreamDataResult(list);

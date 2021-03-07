@@ -1,4 +1,4 @@
-import com.uk.sprint.Rest.ConnectionMock;
+import com.uk.sprint.rest.ConnectionMock;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,11 +12,10 @@ import org.springframework.http.ResponseEntity;
 @RunWith(MockitoJUnitRunner.class)
 public class MockJunitTest {
 
-   @Mock
-   ConnectionMock connectionMock;
-
-   @Mock
-   ResponseEntity responseEntity;
+    @Mock
+    ConnectionMock connectionMock;
+    @Mock
+    ResponseEntity responseEntity;
 
     @Before
     public void setUp(){

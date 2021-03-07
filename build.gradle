@@ -1,6 +1,6 @@
 plugins {
         id 'java'
-        id 'org.springframework.boot' version '2.1.7.RELEASE'
+        id 'org.springframework.boot' version '2.2.1.RELEASE'
         id 'application'
         id 'jacoco'
         id 'checkstyle'
@@ -30,16 +30,17 @@ ext.lombokVersion = '1.18.10'
 ext.springFoxVersion = '2.9.2'
 
 application {
-    mainClassName = 'com.uk.sprint.Rest.SprintAplication'
+    mainClassName = 'com.uk.sprint.Rest.SprintApplication'
 }
 
 checkstyle {
-    configFile = file('checkstyle.xml')
-    ignoreFailures true
+    toolVersion = '8.25'
+    configDirectory = file("$projectDir/config/checkstyle")
+    ignoreFailures = false
 }
 
 repositories {
-    mavenLocal()
+    mavenCentral()
 }
 
 task packageDistribution(type: Zip) {
@@ -47,6 +48,15 @@ task packageDistribution(type: Zip) {
     destinationDirectory = file("$buildDir/dist")
 
     from "$buildDir/toArchive"
+}
+
+task Checkstyle(type: Checkstyle) {
+    configFile rootProject.file('config/checkstyle/checkstyle.xml')
+    source 'src'
+    ignoreFailures false
+    showViolations true
+    include '**/*.java'
+    classpath = files()
 }
 
 dependencies {
@@ -76,7 +86,6 @@ dependencies {
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.10.1'
 
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.10.1'
-    compile group: 'org.camunda.connect', name: 'camunda-connect-http-client', version: '1.0.1'
 
     compile group: 'org.json', name: 'json', version: '20190722'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.10.1'
