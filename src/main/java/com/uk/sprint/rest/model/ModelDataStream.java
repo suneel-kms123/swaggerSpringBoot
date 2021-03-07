@@ -1,4 +1,4 @@
-package com.uk.sprint.Rest.model;
+package com.uk.sprint.rest.model;
 
 import java.util.Objects;
 
@@ -46,13 +46,17 @@ public class ModelDataStream {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         ModelDataStream that = (ModelDataStream) o;
-        return Objects.equals(name, that.name) &&
-                Objects.equals(surname, that.surname) &&
-                Objects.equals(city, that.city) &&
-                Objects.equals(country, that.country);
+        return Objects.equals(name, that.name)
+                && Objects.equals(surname, that.surname)
+                && Objects.equals(city, that.city)
+                && Objects.equals(country, that.country);
     }
 
     @Override
@@ -62,11 +66,10 @@ public class ModelDataStream {
 
     @Override
     public String toString() {
-        return "{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", city='" + city + '\'' +
-                ", country='" + country + '\'' +
-                '}';
+        return "{" + "name='" + name + '\''
+                + ", surname='" + surname + '\''
+                + ", city='" + city + '\''
+                + ", country='" + country + '\''
+                + '}';
     }
 }

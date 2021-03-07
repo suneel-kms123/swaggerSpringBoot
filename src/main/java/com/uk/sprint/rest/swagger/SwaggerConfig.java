@@ -1,4 +1,4 @@
-package com.uk.sprint.Rest.swagger;
+package com.uk.sprint.rest.swagger;
 
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
@@ -26,15 +26,22 @@ public class SwaggerConfig {
 
     @Bean
     public Docket getApi() {
-        return (new Docket(DocumentationType.SWAGGER_2)).securityContexts(this.getSecurityContext()).securitySchemes(this.getSecuritySchemes()).host(this.swaggerURL.getAuthority()).select().apis(RequestHandlerSelectors.basePackage("org.springframework")).build().produces(Sets.newHashSet(new String[]{"application/json"})).apiInfo(this.apiInfo()).select().paths(this.postPaths()).build();
+        return (new Docket(DocumentationType.SWAGGER_2)).securityContexts(this.getSecurityContext())
+                .securitySchemes(this.getSecuritySchemes()).host(this.swaggerURL.getAuthority()).select()
+                .apis(RequestHandlerSelectors
+                        .basePackage("org.springframework")).build()
+                .produces(Sets.newHashSet(new String[]{"application/json"}))
+                .apiInfo(this.apiInfo()).select().paths(this.postPaths()).build();
     }
 
     private Predicate<String> postPaths() {
-        return Predicates.or(PathSelectors.regex("/api/.*"), PathSelectors.regex("/api/rest.*"));
+        return Predicates.or(PathSelectors.regex("/api/.*"), PathSelectors
+                .regex("/api/rest.*"));
     }
 
     private List<SecurityContext> getSecurityContext() {
-        SecurityReference securityReference = SecurityReference.builder().reference("basicAuth").scopes(new AuthorizationScope[0]).build();
+        SecurityReference securityReference = SecurityReference.builder().reference("basicAuth")
+                .scopes(new AuthorizationScope[0]).build();
         List<SecurityReference> reference = new ArrayList(1);
         reference.add(securityReference);
         List<SecurityContext> securityContexts = new ArrayList(1);
@@ -50,8 +57,8 @@ public class SwaggerConfig {
 
     @Bean
     public ApiInfo apiInfo() {
-        return (new ApiInfoBuilder()).title("Swagger Spring Boot").
-                description("Swagger Spring boot API reference for developers").
-               version("1.0").build();
+        return (new ApiInfoBuilder()).title("Swagger Spring Boot")
+                .description("Swagger Spring boot API reference for developers")
+                .version("1.0").build();
     }
 }

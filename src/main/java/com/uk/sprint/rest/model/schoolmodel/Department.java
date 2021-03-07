@@ -1,4 +1,4 @@
-package com.uk.sprint.Rest.model.schoolModel;
+package com.uk.sprint.rest.model.schoolmodel;
 
 import lombok.Builder;
 import lombok.Getter;
