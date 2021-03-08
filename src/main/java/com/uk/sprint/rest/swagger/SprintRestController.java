@@ -4,6 +4,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,9 +19,9 @@ class SprintRestController {
             message = "")})
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    @PostMapping({"/api/v1/restApi"})
-    public String getRestApi() {
-        return "jai ho";
+    @GetMapping({"/api/v1/restApi"})
+    public ResponseEntity<String> getRestApi() {
+        return ResponseEntity.ok("success");
     }
 
 }
