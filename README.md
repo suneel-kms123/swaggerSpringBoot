@@ -13,4 +13,4 @@ Project aimed to learn:
 
   junit using mock and wiremock. 
 
-https://github.com/suneel-kms123/swaggerSpringBoot/blob/master/.github/workflows/gradle.yml//badge.svg
+![swaggerSpringBoot workflow](https://github.com/suneel-kms123/swaggerSpringBoot/blob/master/.github/workflows/gradle.yml//badge.svg)
