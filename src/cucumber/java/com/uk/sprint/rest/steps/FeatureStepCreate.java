@@ -1,4 +1,4 @@
-package steps;
+package com.uk.sprint.rest.steps;
 
 import io.cucumber.java8.En;
 import io.cucumber.java8.Scenario;
@@ -24,7 +24,7 @@ public class FeatureStepCreate implements En {
             RestAssured.given()
                     .accept(ContentType.JSON)
                     .when()
-                    .get("api/v1/restApi")
+                    .get("/api/v1/restApi")
                     .then().assertThat().statusCode(200);
         });
 

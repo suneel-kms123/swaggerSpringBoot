@@ -59,8 +59,12 @@ task Checkstyle(type: Checkstyle) {
     classpath = files()
 }
 
+springBoot {
+    mainClassName = 'com.uk.sprint.rest.SprintApplication'
+}
+
 test {
-    useJUnit()
+    useJUnitPlatform()
 }
 
 sourceSets {
@@ -81,10 +85,18 @@ task cucumberTest(type: Test) {
     outputs.dir file('build/test-results/cucumberTest')
     dependsOn cucumberClasses
     minHeapSize =  "256m"
-    maxHeapSize = "46"
+    maxHeapSize = "1024m"
 }
 
 check.dependsOn tasks.cucumberTest
+
+
+configurations {
+    cucumberImplementation.extendsFrom testImplementation
+    cucumberRuntimeOnly.extendsFrom testRuntime
+    cucumberCompileOnly.extendsFrom testCompileOnly
+    cucumberTestAnnounce.extendsFrom testAnnotationProcessor
+}
 
 
 dependencies {
@@ -95,7 +107,7 @@ dependencies {
     implementation "org.springframework.security:spring-security-web"
     implementation "org.springframework.security:spring-security-ldap"
     implementation "org.springframework.kafka:spring-kafka"
-   // implementation "org.jetbrains.annotations:19.0.0"
+    compileOnly 'org.jetbrains:annotations:19.0.0'
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.1.RELEASE'
@@ -122,7 +134,6 @@ dependencies {
 
     // test compilation dependencies
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
-    //testImplementation "org.projectlombok:lombok:${lombokVersion}"
     cucumberImplementation "org.projectlombok:lombok:${lombokVersion}"
     testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
     cucumberCompileOnly "org.projectlombok:lombok:${lombokVersion}"
@@ -137,6 +148,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api'
     testImplementation 'org.mockito:mockito-junit-jupiter:3.3.3'
     testImplementation 'org.awaitility:awaitility:3.1.6'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
 
     // test implementation dependencies
@@ -152,7 +164,8 @@ dependencies {
     cucumberImplementation 'io.cucumber:cucumber-junit:6.8.0'
     cucumberImplementation 'io.cucumber:cucumber-spring:6.8.0'
     cucumberImplementation 'org.awaitility:awaitility:3.1.6'
-    cucumberImplementation 'io.rest-assured:rest-assured:4.2.0'
-    cucumberImplementation 'io.rest-assured:rest-assured-all:4.2.0'
+    cucumberImplementation 'io.rest-assured:rest-assured:4.0.0'
+    cucumberImplementation 'io.rest-assured:rest-assured-all:4.0.0'
     cucumberImplementation 'io.cucumber:cucumber-junit-platform-engine:6.8.0'
+    cucumberImplementation 'org.apache.tomcat:tomcat-servlet-api:9.0.37'
 }
