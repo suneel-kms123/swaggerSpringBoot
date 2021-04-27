@@ -1,3 +1,5 @@
+package com.uk.sprint.rest;
+
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.uk.sprint.rest.SprintApplication;
 import io.cucumber.java8.En;
