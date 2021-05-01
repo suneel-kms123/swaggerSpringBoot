@@ -1,6 +1,6 @@
 import com.uk.sprint.rest.impl.JavaStreamFilterImpl;
 import com.uk.sprint.rest.model.ModelDataStream;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;

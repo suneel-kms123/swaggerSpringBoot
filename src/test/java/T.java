@@ -2,7 +2,9 @@ import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
@@ -16,7 +18,7 @@ public class T {
     private RestTemplate restTemplate;
     private WireMockServer wireMockServer;
 
-    @Before
+    @BeforeEach
     public void setUp(){
         this.restTemplate = new RestTemplate();
         this.wireMockServer = new WireMockServer(options().port(9001));
@@ -41,8 +43,7 @@ public class T {
     }
 
 
-    @After
     public void tearDown(){
-        this.wireMockServer.stop();
+        wireMockServer.stop();
     }
 }
