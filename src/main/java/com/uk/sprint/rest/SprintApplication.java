@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableCaching
 @EnableAutoConfiguration
 @SpringBootApplication
-@ComponentScan(basePackages = "com.uk.sprint.Rest")
+@ComponentScan(basePackages = "com.uk.sprint")
 public class SprintApplication {
 
     public static void main(String[] args) {
