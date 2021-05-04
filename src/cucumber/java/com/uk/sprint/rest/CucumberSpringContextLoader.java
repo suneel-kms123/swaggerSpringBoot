@@ -16,11 +16,11 @@ import org.springframework.test.context.ActiveProfiles;
 public class CucumberSpringContextLoader implements En {
 
     @Autowired
-    WireMockServer wireMockServer;
+    WireMockManager wireMockManager;
 
-    CucumberSpringContextLoader() {
+    public CucumberSpringContextLoader() {
         After(scenario -> {
-            wireMockServer.resetAll();
+            wireMockManager.resetAll();
         });
     }
 }

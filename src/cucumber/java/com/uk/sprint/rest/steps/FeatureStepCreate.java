@@ -1,5 +1,8 @@
 package com.uk.sprint.rest.steps;
 
+import com.github.tomakehurst.wiremock.client.WireMock;
+import com.github.tomakehurst.wiremock.http.Response;
+import com.uk.sprint.rest.WireMockManager;
 import io.cucumber.java8.En;
 import io.cucumber.java8.Scenario;
 import io.restassured.RestAssured;
@@ -11,13 +14,15 @@ public class FeatureStepCreate implements En {
 
     private Scenario scenario;
 
-    public FeatureStepCreate() {
+    public FeatureStepCreate(final WireMockManager wireMockManager) {
         Before(scenario -> {
             this.scenario = scenario;
         });
 
         Given("^API is available", () -> {
-            log.info("cucumber on a roll");
+            wireMockManager.getWireMockServer().stubFor(WireMock
+                    .get(WireMock.urlPathMatching("/api/v1/restApi"))
+                    .willReturn(WireMock.aResponse().withStatus(200)));
         });
 
         When("^call the first rest API$", () -> {
