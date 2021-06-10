@@ -7,7 +7,7 @@ import java.util.*;
 @Slf4j
 public class TechGigChallenge {
 
-    public static void main(String[] args) {
+    public void primeNumberTechGigProblemNeedsOptimization() {
 
         Scanner scan = new Scanner(System.in);
 
@@ -30,6 +30,7 @@ public class TechGigChallenge {
             }
 
             List<Integer> primeNumber1List = new ArrayList<>();
+
             for (int j = number1; j <= number2; j++) {
                 if (j == 1) {
                     continue;
@@ -51,7 +52,8 @@ public class TechGigChallenge {
                             primeNumber1List.add(j);
                         }
                     }
-                };
+                }
+                ;
             }
 
             List<Integer> primeNumber2List = new ArrayList<>();
@@ -67,7 +69,8 @@ public class TechGigChallenge {
                             primeNumber2List.add(j);
                         }
                     }
-                };
+                }
+                ;
             }
 
             if (primeNumber2List.size() != 0 && primeNumber1List.size() != 0) {
