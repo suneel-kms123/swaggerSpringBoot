@@ -7,19 +7,79 @@ import java.util.*;
 @Slf4j
 public class TechGigChallenge {
 
-    /*If the blood composition of the person is a subsequence of the virus composition V, then the person is identified as POSITIVE otherwise NEGATIVE.
-Example:  Virus Composition, V = coronavirus
-Blood Composition of the person , B = ravus
-The person in question is POSITIVE as B is the subsequence of the V.
-Note: The virus and blood compositions are lowercase alphabet strings.
-Input Format
-The first line of the input consists of the virus composition, V
-The second line of he input consists of the number of people, N
-Next N lines each consist of the blood composition of the ith person, Bi*/
+    public static void main(String[] args) {
 
+        Scanner scan = new Scanner(System.in);
 
-    //public static void main(String[] args) {
-      public void techGigChallenge() {
+        int numberOfInputItem = Integer.parseInt(scan.nextLine());
+        List<String> strList = new ArrayList<>();
+        for (int i = 0; i < numberOfInputItem; i++) {
+            String s = scan.nextLine();
+            strList.add(s);
+        }
+        scan.close();
+
+        for (int i = 0; i < strList.size(); i++) {
+            String[] inputNumberList = strList.get(i).split(" ");
+            int number1 = Integer.parseInt(inputNumberList[0]);
+            int number2 = Integer.parseInt(inputNumberList[1]);
+
+            if (number1 == number2) {
+                System.out.println("0");
+                continue; // return 0
+            }
+
+            List<Integer> primeNumber1List = new ArrayList<>();
+            for (int j = number1; j <= number2; j++) {
+                if (j == 1) {
+                    continue;
+                }
+
+                if (j == 2) {
+                    primeNumber1List.add(j);
+                    continue;
+                }
+
+                for (int k = 2; k < j; k++) {
+                    if (j % k == 0) {
+                        if (primeNumber1List.contains(j)) {
+                            primeNumber1List.remove(primeNumber1List.indexOf(j));
+                        }
+                        break;
+                    } else {
+                        if (!primeNumber1List.contains(j)) {
+                            primeNumber1List.add(j);
+                        }
+                    }
+                };
+            }
+
+            List<Integer> primeNumber2List = new ArrayList<>();
+            for (int j = number2; j > number1; j--) {
+                for (int k = 2; k <= number2 / 2; k++) {
+                    if (j % k == 0) {
+                        if (primeNumber2List.contains(j)) {
+                            primeNumber2List.remove(primeNumber2List.indexOf(j));
+                        }
+                        break;
+                    } else {
+                        if (!primeNumber2List.contains(j)) {
+                            primeNumber2List.add(j);
+                        }
+                    }
+                };
+            }
+
+            if (primeNumber2List.size() != 0 && primeNumber1List.size() != 0) {
+                System.out.println(primeNumber2List.stream().max(Integer::compareTo).get() - primeNumber1List.stream()
+                        .min(Integer::compareTo).get());
+            } else {
+                System.out.println("-1");
+            }
+        }
+    }
+
+    public void techGigChallenge() {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("enter the name of virus:");
             final String nameOfVirus = scanner.nextLine();
@@ -57,6 +117,4 @@ Next N lines each consist of the blood composition of the ith person, Bi*/
             log.info("error");
         }
     }
-
-
 }
