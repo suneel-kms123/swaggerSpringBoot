@@ -1,0 +1,160 @@
+openapi: '3.0.0'
+info:
+  description: This is a simple example NodeJS API project to demonstrate Swagger Documentation
+  version: 1.0.0
+  title: airline reservation REST API
+  contact:
+    email: airlinereservationdevelopment@gmail.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: UserProfile
+    description: User Porifle creation actions
+    externalDocs:
+      description: Find out more
+      url: 'http://localhost:9092'
+paths:
+  /user/createProfile:
+    post:
+      tags:
+        - UserProfile
+      operationId: createProfile
+      summary: create user profile
+      description: 'create profile '
+      parameters:
+        - in: query
+          name: userProfile
+          required: true
+          schema:
+            $ref: '#/components/schemas/userProfile'
+      responses:
+        '200':
+          description: successful operation
+        '401':
+          description: Invalid status value
+  '/updateUserById/{id}':
+    put:
+      tags:
+        - login
+      summary: Update the user
+      description: Update the user
+      parameters:
+        - name: id
+          in: path
+          description: email id that needs to be updated
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid status value
+  '/deleteUserById/{id}':
+    delete:
+      tags:
+        - login
+      summary: Delete the user
+      description: Delete the user
+      parameters:
+        - name: id
+          in: path
+          description: email id that needs to be deleted
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid status value
+  '/fetchUserProfile/{id}':
+    get:
+      tags:
+        - login
+      summary: get profile details of the user
+      description: get profile details of the user
+      parameters:
+        - name: id
+          in: path
+          description: email id that needs to be deleted
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/userProfile'
+        '400':
+          description: Invalid status value
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidResponse'
+        '401':
+          description: Invalid status value
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidResponse'
+components:
+  schemas:
+    userProfile:
+      type: object
+      properties:
+        passportId:
+          type: string
+        emailId:
+          type: string
+        firstname:
+          type: string
+        profile:
+          type: string
+        surname:
+          type: string
+    userProfileResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        emailId:
+          type: string
+        firstname:
+          type: string
+        profile:
+          type: string
+        surname:
+          type: string
+        passportId:
+          type: object
+    todosResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+        task:
+          type: string
+        assignee:
+          type: string
+        status:
+          type: string
+    Task:
+      type: object
+      properties:
+        task:
+          type: string
+        assignee:
+          type: string
+        status:
+          type: string
+    InvalidResponse:
+      type: object
+      properties:
+        statusCode:
+          type: string
+        message:
+          type: string
