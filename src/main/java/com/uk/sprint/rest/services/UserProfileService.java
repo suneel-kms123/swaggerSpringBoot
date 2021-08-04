@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserProfileService {
 
@@ -18,8 +20,12 @@ public class UserProfileService {
         userProfileRepository.save(userProfileEntity);
     }
 
-    public void getAllUserProfile() {
-        userProfileRepository.findAll(Sort.sort(UserProfile.class));
+    public List<UserProfile> getAllUserProfile() {
+       return UserProfile.toDomain(userProfileRepository.findAll(Sort.sort(UserProfile.class)));
     }
 
+    public void updateUserProfile(UserProfile userProfile) {
+        UserProfileEntity userProfileEntity = UserProfile.toEntity(userProfile);
+        userProfileRepository.save(userProfileEntity);
+    }
 }
