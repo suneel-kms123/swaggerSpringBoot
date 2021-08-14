@@ -3,7 +3,7 @@ name: create and deploy docker container
 
 on:
  workflow_run:
-    workflows: ["build"]
+    workflows: ["Java CI with Gradle"]
     branches: [master]
     types:
       - completed
