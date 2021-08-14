@@ -172,6 +172,7 @@ dependencies {
     testImplementation 'org.mockito:mockito-junit-jupiter:3.3.3'
     testImplementation 'org.awaitility:awaitility:3.1.6'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    testImplementation 'com.h2database:h2:1.3.148'
 
 
     // test implementation dependencies
@@ -191,4 +192,5 @@ dependencies {
     cucumberImplementation 'io.rest-assured:rest-assured-all:4.0.0'
     cucumberImplementation 'io.cucumber:cucumber-junit-platform-engine:6.8.0'
     cucumberImplementation 'org.apache.tomcat:tomcat-servlet-api:9.0.37'
+    cucumberImplementation 'com.h2database:h2:1.3.148'
 }
