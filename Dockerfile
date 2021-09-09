@@ -10,7 +10,7 @@ RUN apk add unzip
 
 WORKDIR /app
 
-COPY com.sprint-1.0-SNAPSHOT.jar ./app.jar
+COPY app-jar/com.sprint-1.0-SNAPSHOT.jar ./app.jar
 
 ENTRYPOINT ["java","-jar","/app.jar"]
 
