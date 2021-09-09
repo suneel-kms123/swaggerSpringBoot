@@ -10,7 +10,7 @@ RUN apk add unzip
 
 WORKDIR /app
 
-COPY ./build/distributions/com.sprint-1.0-SNAPSHOT.zip ./controller.zip
+COPY com.sprint-1.0-SNAPSHOT.zip ./controller.zip
 
 RUN unzip controller.zip -d /app
 RUN mv com.sprint-1.0-SNAPSHOT controller
