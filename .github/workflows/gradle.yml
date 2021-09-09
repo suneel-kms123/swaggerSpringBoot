@@ -22,9 +22,9 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew clean build
-    - name: Archive artifacts
-      uses: actions/upload-artifact@v2
+    - name: Archive artifacts Cache
+      uses: actions/cache@v2.1.6
       with:
-        name: dist-without-markdown
         path: ./build/libs
-        retention-days: 1
+        key: app-jar
+        restore-keys: app-jar
