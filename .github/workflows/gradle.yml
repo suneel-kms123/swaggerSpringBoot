@@ -22,9 +22,9 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew clean build
-    - name: Cache
-      uses: actions/cache@v2.1.6
+    - name: upload artifacr
+      uses: actions/upload-artifact@v2.2.4
       with:
         path: ./build/libs/
-        key: app-jar
-        restore-keys: app-jar
+        name: app-jar
+        retention-days: 1
