@@ -26,6 +26,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: dist-without-markdown
-        path: |
-          ./build/distributions/com.sprint-1.0-SNAPSHOT.zip
+        path: ./build/libs
         retention-days: 1
