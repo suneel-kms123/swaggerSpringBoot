@@ -10,10 +10,8 @@ RUN apk add unzip
 
 WORKDIR /app
 
-COPY com.sprint-1.0-SNAPSHOT.zip ./controller.zip
+COPY com.sprint-1.0-SNAPSHOT.jar ./app.jar
 
-RUN unzip controller.zip -d /app
-RUN mv com.sprint-1.0-SNAPSHOT controller
 ENTRYPOINT ["java","-jar","/app.jar"]
 
 EXPOSE 8080

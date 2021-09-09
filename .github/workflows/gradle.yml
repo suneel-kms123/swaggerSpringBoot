@@ -22,10 +22,8 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew clean build
-    - name: Archive artifacts
-      uses: actions/upload-artifact@v2
+    - name: Archive artifacts Cache
+      uses: actions/upload-artifact@v2.2.4
       with:
-        name: dist-without-markdown
-        path: |
-          ./build/distributions/com.sprint-1.0-SNAPSHOT.zip
-        retention-days: 1
+        path: ./build/libs
+        name: app-jar
