@@ -37,9 +37,10 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v2.0.10
+        uses: dawidd6/action-download-artifact@v2
         with:
-          name: dist-without-markdown
+          workflow: gradle.yml
+          workflow_conclusion: success
 
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
