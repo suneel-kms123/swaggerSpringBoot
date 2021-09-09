@@ -23,8 +23,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew clean build
     - name: Archive artifacts Cache
-      uses: actions/cache@v2.1.6
+      uses: actions/upload-artifact@v2.2.4
       with:
         path: ./build/libs
-        key: app-jar
-        restore-keys: app-jar
+        name: app-jar
