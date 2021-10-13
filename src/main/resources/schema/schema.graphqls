@@ -1,0 +1,10 @@
+type Query {
+    bankByIfscCode(code: String): Bank
+}
+
+type Bank {
+    code: String!
+    name: String!
+    address: String
+    region: String
+}
