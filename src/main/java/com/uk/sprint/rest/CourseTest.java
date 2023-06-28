@@ -1,6 +1,7 @@
 package com.uk.sprint;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public class CourseTest {
 
@@ -160,6 +161,37 @@ public class CourseTest {
 
 
         return new int[0];
+    }
+
+
+    public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
+        Map<Integer, List<List<Integer>>> map = new HashMap<>();
+        for (int j : nums1) {
+            for (int value : nums2) {
+                int sum = j + value;
+                if (map.containsKey(sum)) {
+                    map.get(sum).add(List.of(j, value));
+                } else {
+                    List<Integer> intList = List.of(j, value);
+                    List<List<Integer>> newList = new ArrayList<>();
+                    newList.add(intList);
+                    map.put(sum, newList);
+                }
+            }
+        }
+
+        Iterator<Integer> intStream = map.keySet().stream().sorted().limit(k).iterator();
+        List<List<Integer>> result = new ArrayList<>();
+        while(intStream.hasNext()) {
+            var list = map.get(intStream.next());
+            if (list.size() == k) {
+                result.addAll(list);
+                return result;
+            }
+            result.addAll(list);
+        }
+
+        return result;
     }
 
 }
