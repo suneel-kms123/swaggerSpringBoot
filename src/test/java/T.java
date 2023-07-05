@@ -1,8 +1,5 @@
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.WireMock;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
@@ -19,7 +16,7 @@ public class T {
     private WireMockServer wireMockServer;
 
     @BeforeEach
-    public void setUp(){
+    public void setUp() {
         this.restTemplate = new RestTemplate();
         this.wireMockServer = new WireMockServer(options().port(9001));
         this.wireMockServer.start();
@@ -27,13 +24,14 @@ public class T {
     }
 
     @Test
-    public void testWireMockHttpRequest(){
+    public void testWireMockHttpRequest() {
         givenThat(any(anyUrl()).willReturn(aResponse().withStatus(200)));
         String serverUrl = buildApiMethodUrl();
         ResponseEntity<String> response = this.restTemplate.getForEntity(serverUrl,
                 String.class
         );
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+
     }
 
     private String buildApiMethodUrl() {
@@ -43,7 +41,7 @@ public class T {
     }
 
 
-    public void tearDown(){
+    public void tearDown() {
         wireMockServer.stop();
     }
 }
