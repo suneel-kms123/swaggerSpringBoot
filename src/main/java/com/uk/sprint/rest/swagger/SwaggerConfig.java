@@ -31,12 +31,7 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors
                         .basePackage("org.springframework")).build()
                 .produces(Sets.newHashSet(new String[]{"application/json"}))
-                .apiInfo(this.apiInfo()).select().paths(this.postPaths()).build();
-    }
-
-    private Predicate<String> postPaths() {
-        return Predicates.or(PathSelectors.regex("/api/.*"), PathSelectors
-                .regex("/api/rest.*"));
+                .apiInfo(this.apiInfo()).select().paths(PathSelectors.regex("/api/.*")).build();
     }
 
     private List<SecurityContext> getSecurityContext() {
