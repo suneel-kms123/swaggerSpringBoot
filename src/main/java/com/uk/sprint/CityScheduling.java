@@ -16,11 +16,11 @@ public class CityScheduling {
         Arrays.sort(costs, (a, b) -> (a[0] - a[1]) - (b[0] - b[1]));
 
         int sum = 0;
-        for (int i =0 ; i < costs.length /2; i++) {
+        for (int i =0; i < costs.length /2; i++) {
             sum += costs[i][0];
         }
 
-        for (int i =0 ; i < costs.length /2; i++) {
+        for (int i =0; i < costs.length /2; i++) {
             sum += costs[i][1];
         }
 

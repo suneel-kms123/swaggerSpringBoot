@@ -6,12 +6,16 @@ import java.util.Map;
 public class RecursiveSolution {
 
     public static int recursiveFactorial(int n) {
-        if (n == 1) return n;
+        if (n == 1) {
+            return n;
+        }
         return n * recursiveFactorial(n-1);
     }
     
     public int compress(char[] chars) {
-        if (chars.length == 1) return chars.length;
+        if (chars.length == 1) {
+            return chars.length;
+        }
 
         int count = 1;
         StringBuffer s = new StringBuffer();

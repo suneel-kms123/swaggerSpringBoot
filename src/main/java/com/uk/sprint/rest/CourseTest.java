@@ -1,3 +1,4 @@
+/*
 package com.uk.sprint;
 
 import java.util.*;
@@ -29,7 +30,7 @@ public class CourseTest {
         Arrays.equals(stringArray, numerics);
         Arrays.compare(stringArray, numerics);
         Arrays.binarySearch(arrInt, 2);
-        var len = stringArray.length; //Java 10 introduces a shiny new feature: type inference for local variables
+        //var len = stringArray.length; //Java 10 introduces a shiny new feature: type inference for local variables
 
         //two dimensiional array
         int[][] dimens = new int[2][10];
@@ -123,7 +124,8 @@ public class CourseTest {
 
     }
 
-    //Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+    //Given an array of integers nums and an integer target,
+    return indices of the two numbers such that they add up to target.
     public int[] getTarget(int[] nums, int target) {
         List<Integer> result = new ArrayList<>();
         //data/nums = [2,7,11,15], target = 9
@@ -195,3 +197,4 @@ public class CourseTest {
     }
 
 }
+*/

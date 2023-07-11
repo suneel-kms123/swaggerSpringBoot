@@ -1,9 +1,6 @@
-wiremock:
-  base-url: http://localhost:8080
-
 spring:
   datasource:
-    jdbcUrl: jdbc:oracle:thin:@//127.0.0.1:1521/XE
+    jdbcUrl: jdbc:oracle:thin:@127.0.0.1:1521/XE
     username: fred
     password: flintstone
     driverClassName: oracle.jdbc.OracleDriver
