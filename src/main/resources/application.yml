@@ -1,0 +1,46 @@
+server:
+  port : 8081
+
+spring:
+  datasource:
+    jdbcUrl: jdbc:mysql://localhost:3306/airlines
+    username: root   #investigate why nnection is not ew
+    password: secret
+    driverClassName: com.mysql.jdbc.Driver
+    minimumIdle: 0
+    minimumPoolSize: 10
+    maxLifetime: 840000
+    connectionTimeout: 30000
+    type: com.zaxxer.hikari.HikariDataSource
+  jpa:
+    generate-ddl: true
+    hibernate:
+      generate_statistics: true
+      ddl-auto: update
+      show-sql: true
+    properties:
+      hibernate:
+        temp.use_jdbc_metadata_defaults: false
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+logging:
+  level:
+    org:
+      hibernate:
+        stat: INFO
+      springframework:
+        jdbc:
+          core:
+            JdbcTemplate: INFO
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    livenessState:
+      enabled: true
+    readinessState:
+      enabled: true

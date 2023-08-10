@@ -1,9 +1,22 @@
+server:
+  port : 8081
+
 wiremock:
-  base-url: http://localhost:8080
+  base-url: http://localhost:8081
 
 spring:
   datasource:
-    url: jdbc:h2:mem:test_db
-    driverClassName: org.h2.Driver
+    jdbcUrl: jdbc:oracle:thin:@//127.0.0.1:1521/XE
+    username: fred
+    password: flintstone
+    driverClassName: oracle.jdbc.OracleDriver
+    schema: FRED
+    minimumIdle: 2
+    minimumPoolSize: 10
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    hibernate:
+      show-sql: true
+      ddl-auto: none
+    properties:
+      hibernate:
+        temp.use_jdbc_metadata_defaults: false
