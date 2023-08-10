@@ -29,10 +29,9 @@ public class AppDataSourceConfiguration {
     @Bean
     public HikariDataSource springBootDataSource() {
        final HikariConfig config = sprinBootHikariConfig();
-       config.setUsername("fred");
-       config.setPassword("flintstone");
-       config.setJdbcUrl("jdbc:oracle:thin:@//localhost:1521/XE");
-       config.setSchema("FRED");
+       config.setUsername("root");
+       config.setPassword("secret");
+       config.setJdbcUrl("jdbc:mysql://localhost:3306/airlines");
        config.addDataSourceProperty("hibernate.hbm2ddl.auto", "update");
        log.info("config -->" + config.getConnectionTimeout());
        return new HikariDataSource(config);

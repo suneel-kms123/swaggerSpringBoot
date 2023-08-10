@@ -1,4 +1,4 @@
-package com.uk.sprint.rest.infrastructure;
+package com.uk.sprint.rest.infrastructure.database;
 
 import com.uk.sprint.rest.domain.model.User;
 import com.uk.sprint.rest.domain.repository.UserRepository;
@@ -15,16 +15,18 @@ public class AirlineUserRepository implements UserRepository {
     UserProfileRepository userProfileRepository;
 
     @Override
-    public List<User> getUserProfile() {
-        return userProfileRepository.findAll();
+    public User getUserProfile() {
+        //return userProfileRepository.findAll();
+        return null;
     }
 
     @Override
     public void saveProfile(User user) {
-        userProfileRepository.save(user);
+        //userProfileRepository.save(user);
     }
 
     private List<User> convert(List<UserProfileEntity> userProfileEntity) {
-        userProfileEntity.stream();
+        //userProfileEntity.stream();
+        return null;
     }
 }

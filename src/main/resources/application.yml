@@ -3,11 +3,10 @@ server:
 
 spring:
   datasource:
-    jdbcUrl: jdbc:oracle:thin:@//localhost:1521/XE
-    username: fred   #investigate why nnection is not ew
-    password: flintstone
-    driverClassName: oracle.jdbc.OracleDriver
-    schema: FRED
+    jdbcUrl: jdbc:mysql://localhost:3306/airlines
+    username: root   #investigate why nnection is not ew
+    password: secret
+    driverClassName: com.mysql.jdbc.Driver
     minimumIdle: 0
     minimumPoolSize: 10
     maxLifetime: 840000
@@ -23,7 +22,7 @@ spring:
       hibernate:
         temp.use_jdbc_metadata_defaults: false
         format_sql: true
-        dialect: org.hibernate.dialect.Oracle12cDialect
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
 logging:
   level:

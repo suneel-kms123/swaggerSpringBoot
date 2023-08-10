@@ -27,7 +27,7 @@ public class UserProfile {
         userProfileEntity.setFirstName(userProfile.getFirstName());
         userProfileEntity.setSurname(userProfile.getSurname());
         userProfileEntity.setAddress(userProfile.getAddress());
-        userProfileEntity.setPassportId(userProfile.getPassportId());
+        userProfileEntity.setPassport(userProfile.getPassportId());
         return userProfileEntity;
     }
 
@@ -36,7 +36,7 @@ public class UserProfile {
         entityList.forEach(userProfileEntity -> userProfileList.add(UserProfile.builder()
                 .address(userProfileEntity.getAddress())
                 .firstName(userProfileEntity.getFirstName())
-                .passportId(userProfileEntity.getPassportId())
+                .passportId(userProfileEntity.getPassport())
                 .surname(userProfileEntity.getSurname()).build()));
         return userProfileList;
     }

@@ -1,8 +1,6 @@
 package com.uk.sprint.rest.infrastructure.database;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -13,6 +11,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @Table(name = "userProfile")
+@NoArgsConstructor
 public class UserProfileEntity implements Serializable {
 
     @Id
@@ -29,5 +28,17 @@ public class UserProfileEntity implements Serializable {
     private String address;
 
     @NotNull
-    private String passportId;
+    private String passport;
+
+    private String country;
+
+    @NonNull
+    private String mobile;
+
+    @NonNull
+    private String email;
+
+    private boolean subscription;
+
+    private boolean premium;
 }

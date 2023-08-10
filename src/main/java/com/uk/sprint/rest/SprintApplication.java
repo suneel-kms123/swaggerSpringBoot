@@ -17,7 +17,7 @@ import org.springframework.retry.annotation.EnableRetry;
 @SpringBootApplication
 @ComponentScan(basePackages = "com.uk.sprint")
 @EntityScan(basePackages = "com.uk.sprint")
-@EnableJpaRepositories(basePackages = "com.uk.sprint.repository")
+@EnableJpaRepositories(basePackages = "com.uk.sprint")
 public class SprintApplication {
 
     public static void main(String[] args) {

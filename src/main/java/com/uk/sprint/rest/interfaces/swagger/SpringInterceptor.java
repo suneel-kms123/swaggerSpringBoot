@@ -1,4 +1,4 @@
-package com.uk.sprint.rest.interfaces.controller.swagger;
+package com.uk.sprint.rest.interfaces.swagger;
 
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;

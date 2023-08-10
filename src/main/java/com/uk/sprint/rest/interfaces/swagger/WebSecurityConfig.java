@@ -1,4 +1,4 @@
-package com.uk.sprint.rest.interfaces.controller.swagger;
+package com.uk.sprint.rest.interfaces.swagger;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

@@ -1,4 +1,4 @@
-package com.uk.sprint.rest.interfaces.controller.swagger;
+package com.uk.sprint.rest.interfaces.swagger;
 
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
